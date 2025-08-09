@@ -73,7 +73,7 @@ const Hero = () => {
               ease: 'easeInOut'
             }}
           />
-        ))}
+          It&apos;s not magic, it&apos;s Dimension.
 
         {/* Cursor-following light orbs */}
         {[...Array(3)].map((_, i) => (

@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Cloud, Server, Globe, CheckCircle, Clock, GitBranch } from 'lucide-react';
+import { Cloud, Server, CheckCircle, GitBranch } from 'lucide-react';
 
 const DeploymentsSection = () => {
   const ref = useRef(null);

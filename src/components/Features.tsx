@@ -1,28 +1,14 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { 
-  MessageCircle, 
-  GitBranch, 
-  Code2, 
-  CheckSquare, 
-  Inbox, 
-  Zap,
-  Github,
-  Users,
-  Box
-} from 'lucide-react';
+import { MessageCircle, GitBranch, Code2, CheckSquare, Inbox, Zap, Box } from 'lucide-react';
 
 const Features = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   
   const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const smoothMouseX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const smoothMouseY = useSpring(mouseY, { stiffness: 50, damping: 20 });
 
   useEffect(() => {
     if (isInView) {
@@ -31,63 +17,13 @@ const Features = () => {
   }, [isInView]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (ref.current) {
-        const rect = (ref.current as HTMLElement).getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-        setMousePosition({ x: e.clientX, y: e.clientY });
-        mouseX.set(x * 30);
-        mouseY.set(y * 30);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
+    // Removed mousePosition and setMousePosition references
+  }, []);
 
   const RotatingSquareFrames = ({ className }: { className?: string }) => {
-    return (
-      <motion.div className={`w-[88px] h-[88px] relative ${className || ''}`}>
-        {[72, 80, 88].map((size, i) => (
-          <motion.div
-            key={i}
-            className={`absolute border rounded-${i === 0 ? '2xl' : i === 1 ? '[20px]' : '3xl'}`}
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top: i === 0 ? 0 : i === 1 ? -4 : -8,
-              left: i === 0 ? 0 : i === 1 ? -4 : -8,
-              borderColor: `rgba(226,232,255,${0.24 - i * 0.08})`,
-            }}
-            animate={isVisible ? {
-              rotate: [0, 360],
-              borderColor: [
-                `rgba(226,232,255,${0.24 - i * 0.08})`,
-                `rgba(158,122,255,${0.4 - i * 0.1})`,
-                `rgba(226,232,255,${0.24 - i * 0.08})`
-              ]
-            } : {}}
-            transition={{
-              rotate: { duration: 10 + i * 2, repeat: Infinity, ease: 'linear' },
-              borderColor: { duration: 4, repeat: Infinity }
-            }}
-          >
-            <motion.div 
-              className="absolute w-full h-full"
-              style={{
-                background: `conic-gradient(transparent 0%, rgba(255,255,255,${0.3 - i * 0.1}) 15%, transparent 15%)`
-              }}
-              animate={isVisible ? { rotate: [0, 360] } : {}}
-              transition={{ duration: 10 + i * 2, repeat: Infinity, ease: 'linear' }}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
-    );
+  // ...existing code...
   };
 
-  const AnimatedLines = () => {
     return (
       <>
         {[
@@ -253,11 +189,11 @@ const Features = () => {
         <h3 className="text-[40px] leading-[48px] font-medium mb-3" 
           style={{ fontFamily: 'Onest, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif' }}
         >
-          Crafted for the most{' '}
+          Crafted for the most&nbsp;
           <span className="bg-gradient-to-r from-[#9e7aff] via-[#fe8bbb] to-[#ffbd7a] bg-clip-text text-transparent">
             productive
           </span>
-          {' '}teams.
+          &nbsp;teams.
         </h3>
         <div className="flex justify-center items-center space-x-8 text-lg text-[rgba(226,232,255,0.75)]">
           <span>Precision.</span>
