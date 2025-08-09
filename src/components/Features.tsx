@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MessageCircle, GitBranch, Code2, CheckSquare, Inbox, Zap, Box } from 'lucide-react';
 

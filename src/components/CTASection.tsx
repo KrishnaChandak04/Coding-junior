@@ -110,7 +110,7 @@ const CTASection = () => {
             transition={{ duration: 0.45, ease: [0.6, 0.6, 0, 1] }}
           >
             <span className="bg-gradient-to-r from-[#9e7aff] via-[#fe8bbb] to-[#ffbd7a] bg-clip-text text-transparent text-sm font-medium">
-              You've joined the waitlist!
+              You&apos;ve joined the waitlist!
             </span>
           </motion.div>
         </motion.div>
