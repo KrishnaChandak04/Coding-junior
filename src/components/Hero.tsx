@@ -297,7 +297,7 @@ const Hero = () => {
               } : {}}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              You've joined the waitlist!
+              You&apos;ve joined the waitlist!
             </motion.span>
           </motion.div>
         </motion.div>

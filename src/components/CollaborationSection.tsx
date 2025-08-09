@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MessageCircle, Users, Calendar, Video } from 'lucide-react';
+import { MessageCircle, Users, Video } from 'lucide-react';
 
 const CollaborationSection = () => {
   const ref = useRef(null);
@@ -65,7 +65,7 @@ const CollaborationSection = () => {
                   <span className="text-[rgba(226,232,255,0.5)] text-xs">1:14 PM</span>
                 </div>
                 <p className="text-[rgba(226,232,255,0.75)]">
-                  Our Command K menu doesn't trigger when I'm focused on a text field.
+                  Our Command K menu doesn&apos;t trigger when I&apos;m focused on a text field.
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -129,7 +129,7 @@ const CollaborationSection = () => {
         {/* Auto resource pinning */}
         <div className="bg-[rgba(226,232,255,0.02)] border border-[rgba(226,232,255,0.1)] rounded-xl p-6">
           <h3 className="text-lg font-medium text-[#E2E8FF] mb-2">Auto resource pinning.</h3>
-          <p className="text-[rgba(226,232,255,0.75)]">We'll keep track of what's important in chat.</p>
+          <p className="text-[rgba(226,232,255,0.75)]">We&apos;ll keep track of what&apos;s important in chat.</p>
         </div>
 
         {/* Activity channels */}
