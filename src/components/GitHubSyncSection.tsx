@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Github, GitBranch, Calendar, BarChart3, Target, Clock } from 'lucide-react';
+import { Github, BarChart3, Target, Clock } from 'lucide-react';
 
 const GitHubSyncSection = () => {
   const ref = useRef(null);

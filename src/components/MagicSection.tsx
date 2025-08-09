@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Bell, Eye, Share2, Inbox, Users, Zap } from 'lucide-react';
+import { Bell, Eye, Share2, Inbox, Zap } from 'lucide-react';
 
 const MagicSection = () => {
   const ref = useRef(null);
@@ -45,7 +45,7 @@ const MagicSection = () => {
                 <Bell className="w-8 h-8 text-[#E2E8FF]" />
                 <div>
                   <h3 className="text-xl font-medium text-[#E2E8FF]">Notifications</h3>
-                  <p className="text-[rgba(226,232,255,0.75)]">You're always in sync.</p>
+                    <p className="text-[rgba(226,232,255,0.75)]">You&apos;re always in sync.</p>
                 </div>
               </div>
               

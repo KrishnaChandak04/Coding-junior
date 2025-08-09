@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 
 const Hero = () => {
@@ -16,7 +17,6 @@ const Hero = () => {
   }, []);
   const [email, setEmail] = useState('');
   const [isJoined, setIsJoined] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -34,7 +34,6 @@ const Hero = () => {
         const rect = sectionRef.current.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
         const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-        setMousePosition({ x: e.clientX, y: e.clientY });
         mouseX.set(x * 50);
         mouseY.set(y * 50);
       }
@@ -140,7 +139,7 @@ const Hero = () => {
           <span className="bg-gradient-to-b from-[rgba(240,238,249,0.8)] to-[#E2E8FF] bg-clip-text text-transparent block">
             Dimension is the new
           </span>
-          <span className="bg-gradient-to-r from-[#9e7aff] via-[#fe8bbb] via-[#ffbd7a] to-[#f8eac3] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#9e7aff] via-[#fe8bbb] to-[#ffbd7a] bg-clip-text text-transparent">
             <strong>standard for collaboration</strong>
           </span>
         </motion.h1>
@@ -335,23 +334,23 @@ const Hero = () => {
           <div className="flex justify-center items-center flex-wrap gap-4">
             {/* Million Logo */}
             <div className="w-[180px] h-12 bg-[rgba(226,232,255,0.05)] rounded-lg border border-[rgba(226,232,255,0.1)] flex items-center justify-center gap-2 text-[rgba(226,232,255,0.6)] text-sm font-medium">
-              <img src="/file.svg" alt="Million" className="w-6 h-6 mr-2" /> Million
+              <Image src="/file.svg" alt="Million" width={24} height={24} className="w-6 h-6 mr-2" /> Million
             </div>
             {/* Tabler Logo */}
             <div className="w-[180px] h-12 bg-[rgba(226,232,255,0.05)] rounded-lg border border-[rgba(226,232,255,0.1)] flex items-center justify-center gap-2 text-[rgba(226,232,255,0.6)] text-sm font-medium">
-              <img src="/window.svg" alt="Tabler" className="w-6 h-6 mr-2" /> Tabler
+              <Image src="/window.svg" alt="Tabler" width={24} height={24} className="w-6 h-6 mr-2" /> Tabler
             </div>
             {/* SolidJS Logo */}
             <div className="w-[180px] h-12 bg-[rgba(226,232,255,0.05)] rounded-lg border border-[rgba(226,232,255,0.1)] flex items-center justify-center gap-2 text-[rgba(226,232,255,0.6)] text-sm font-medium">
-              <img src="/globe.svg" alt="SolidJS" className="w-6 h-6 mr-2" /> SolidJS
+              <Image src="/globe.svg" alt="SolidJS" width={24} height={24} className="w-6 h-6 mr-2" /> SolidJS
             </div>
             {/* Starship Logo */}
             <div className="w-[180px] h-12 bg-[rgba(226,232,255,0.05)] rounded-lg border border-[rgba(226,232,255,0.1)] flex items-center justify-center gap-2 text-[rgba(226,232,255,0.6)] text-sm font-medium">
-              <img src="/next.svg" alt="Starship" className="w-6 h-6 mr-2" /> Starship
+              <Image src="/next.svg" alt="Starship" width={24} height={24} className="w-6 h-6 mr-2" /> Starship
             </div>
             {/* Astro Logo */}
             <div className="w-[180px] h-12 bg-[rgba(226,232,255,0.05)] rounded-lg border border-[rgba(226,232,255,0.1)] flex items-center justify-center gap-2 text-[rgba(226,232,255,0.6)] text-sm font-medium">
-              <img src="/vercel.svg" alt="Astro" className="w-6 h-6 mr-2" /> Astro
+              <Image src="/vercel.svg" alt="Astro" width={24} height={24} className="w-6 h-6 mr-2" /> Astro
             </div>
           </div>
       </motion.div>
