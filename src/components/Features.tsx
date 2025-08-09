@@ -7,8 +7,6 @@ const Features = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [isVisible, setIsVisible] = useState(false);
-  
-  const mouseX = useMotionValue(0);
 
   useEffect(() => {
     if (isInView) {
@@ -16,66 +14,18 @@ const Features = () => {
     }
   }, [isInView]);
 
-  useEffect(() => {
-    // Removed mousePosition and setMousePosition references
-  }, []);
-
-  const RotatingSquareFrames = ({ className }: { className?: string }) => {
-  // ...existing code...
-  };
-
-    return (
-      <>
-        {[
-          { width: 300, height: 228, left: 306 },
-          { width: 220, height: 164, left: 614 }
-        ].map((line, i) => (
-          <motion.div
-            key={i}
-            className="absolute top-0 border-r border-b rounded-br-3xl overflow-hidden"
-            style={{
-              width: line.width,
-              height: line.height,
-              left: line.left,
-              borderColor: 'rgba(226,232,255,0.12)'
-            }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, delay: i * 0.2 }}
-          >
-            <motion.div 
-              className="absolute inset-0 border border-[rgba(226,232,255,0.3)] rounded-br-3xl"
-              style={{
-                background: 'conic-gradient(rgba(109,46,255,0), rgba(158,122,255,0.35) 6%, rgba(254,139,187,0.7) 10%, #ffbd7a 14.9%, rgba(109,46,255,0) 15%)',
-                maskImage: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
-                maskComposite: 'xor'
-              }}
-              animate={isVisible ? { rotate: [0, 360] } : {}}
-              transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-            />
-          </motion.div>
-        ))}
-      </>
-    );
-  };
-
   return (
     <section className="relative w-full py-24 px-6 bg-[#05051E] overflow-hidden" ref={ref}>
-      {/* ...existing code... */}
-      {/* Build Section Header */}
+      {/* Section Header */}
       <motion.div 
         className="text-left mb-20"
-        style={{
-          x: useTransform(smoothMouseX, [-30, 30], [-10, 10]),
-          y: useTransform(smoothMouseY, [-30, 30], [-5, 5])
-        }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
       >
-        <RotatingSquareFrames className="mb-5 -ml-3" />
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
@@ -115,7 +65,7 @@ const Features = () => {
           <Box className="w-7 h-7 text-[#E2E8FF] mb-2" />
           <h3 className="text-lg font-medium text-[#E2E8FF] mb-1">Crafted for your favorite tools</h3>
           <p className="text-base text-[rgba(226,232,255,0.55)] max-w-[330px]">
-            Connect your tools - we'll handle the rest. Many integrations, with more to come.
+            Connect your tools - we&apos;ll handle the rest. Many integrations, with more to come.
           </p>
         </div>
         <div className="w-full h-[416px] rounded-[10px] border border-[rgba(226,232,255,0.1)] bg-[rgba(226,232,255,0.01)] relative overflow-hidden">

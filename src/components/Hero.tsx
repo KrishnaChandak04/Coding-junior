@@ -73,8 +73,11 @@ const Hero = () => {
               ease: 'easeInOut'
             }}
           />
+        ))}
+        {/* Subtitle in a proper location */}
+        <p className="absolute left-1/2 top-8 -translate-x-1/2 text-lg text-white/80 font-medium pointer-events-none z-10">
           It&apos;s not magic, it&apos;s Dimension.
-
+        </p>
         {/* Cursor-following light orbs */}
         {[...Array(3)].map((_, i) => (
           <motion.div

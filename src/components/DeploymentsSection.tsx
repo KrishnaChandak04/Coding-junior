@@ -21,7 +21,7 @@ const DeploymentsSection = () => {
         >
           All of your deployments <br />
           <span className="bg-gradient-to-r from-[#9e7aff] via-[#fe8bbb] to-[#ffbd7a] bg-clip-text text-transparent">
-            in one place.
+            in one place.&apos;
           </span>
         </h2>
   <p className="text-xl text-[rgba(226,232,255,0.75)]">
